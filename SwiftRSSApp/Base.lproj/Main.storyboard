@@ -24,7 +24,7 @@
         <!--ニュースリスト-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="ニュースリスト" id="BYZ-38-t0r" customClass="RssNewsListVC" customModule="rssApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="ニュースリスト" id="BYZ-38-t0r" customClass="RssNewsListVC" customModule="SwiftRSSApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -34,7 +34,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Bum-ej-77Q">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NewsCell" textLabel="67X-SI-imN" detailTextLabel="3LX-8j-guu" rowHeight="80" style="IBUITableViewCellStyleSubtitle" id="lww-eW-Tj9">
@@ -64,22 +64,40 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="C0N-8O-uX1"/>
                                 </connections>
                             </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JLE-qc-g6w">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="RSSフィード設定" id="ptA-So-6Fo">
+                                        <connections>
+                                            <segue destination="0Sc-9L-8Wc" kind="show" identifier="pushFeedListVC" id="DVs-3n-jHP"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="NGワード設定" id="W9I-Eo-09a">
+                                        <connections>
+                                            <segue destination="h79-rx-7xC" kind="show" id="dNw-Fl-DeO"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Bum-ej-77Q" secondAttribute="bottom" id="CSi-WS-ALq"/>
+                            <constraint firstItem="JLE-qc-g6w" firstAttribute="top" secondItem="Bum-ej-77Q" secondAttribute="bottom" id="2OZ-LD-tch"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Bum-ej-77Q" secondAttribute="bottom" constant="75" id="CSi-WS-ALq"/>
+                            <constraint firstAttribute="trailing" secondItem="JLE-qc-g6w" secondAttribute="trailing" id="EAp-OH-Wed"/>
+                            <constraint firstItem="JLE-qc-g6w" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="OBp-H3-E1w"/>
                             <constraint firstAttribute="trailing" secondItem="Bum-ej-77Q" secondAttribute="trailing" id="QNI-7v-Nv9"/>
                             <constraint firstItem="Bum-ej-77Q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ej2-g1-1z7"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JLE-qc-g6w" secondAttribute="bottom" id="sMU-Q1-Hbw"/>
                             <constraint firstItem="Bum-ej-77Q" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="sfq-Dj-kaA"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="CSi-WS-ALq"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="ニュース" id="WIf-F4-oeK">
-                        <barButtonItem key="rightBarButtonItem" title="RSSリスト" id="DyC-0N-dHd">
-                            <connections>
-                                <segue destination="0Sc-9L-8Wc" kind="show" identifier="pushFeedListVC" id="JDV-Mi-Mmk"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="ニュース" id="WIf-F4-oeK"/>
                     <connections>
                         <outlet property="tbV" destination="Bum-ej-77Q" id="fid-jd-GHo"/>
                     </connections>
@@ -88,10 +106,10 @@
             </objects>
             <point key="canvasLocation" x="288" y="311"/>
         </scene>
-        <!--RSSリスト-->
+        <!--RSSフィード設定-->
         <scene sceneID="maM-9Y-gyW">
             <objects>
-                <viewController id="0Sc-9L-8Wc" customClass="FeedListVC" customModule="rssApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0Sc-9L-8Wc" customClass="FeedListVC" customModule="SwiftRSSApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="R69-RO-oEY"/>
                         <viewControllerLayoutGuide type="bottom" id="5ee-4k-44e"/>
@@ -140,7 +158,7 @@
                             <constraint firstItem="vLE-fW-xEr" firstAttribute="leading" secondItem="Ijl-sV-Hfo" secondAttribute="leading" id="h1d-MI-BRJ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="RSSリスト" id="KYP-8U-X18">
+                    <navigationItem key="navigationItem" title="RSSフィード設定" id="KYP-8U-X18">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="A1f-3R-3FS">
                             <connections>
                                 <action selector="pressAddBtn:" destination="0Sc-9L-8Wc" id="sSs-Cj-QeO"/>
@@ -153,7 +171,74 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MRR-rM-Gny" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="978" y="311"/>
+            <point key="canvasLocation" x="1003" y="83"/>
+        </scene>
+        <!--NGList-->
+        <scene sceneID="BKk-Jf-RwY">
+            <objects>
+                <viewController title="NGList" id="h79-rx-7xC" customClass="NGListVC" customModule="SwiftRSSApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jj7-Hs-97A"/>
+                        <viewControllerLayoutGuide type="bottom" id="FXP-aS-pxE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="w7L-3y-zjx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="re2-aq-LH2">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="FeedCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="NGWordCell" editingAccessoryType="detailDisclosureButton" textLabel="jss-vq-yNO" detailTextLabel="ChF-cy-hmL" rowHeight="60" style="IBUITableViewCellStyleSubtitle" id="B9e-T9-Pra">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B9e-T9-Pra" id="kai-P2-35d">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jss-vq-yNO">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ChF-cy-hmL">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="h79-rx-7xC" id="PL8-lF-OoZ"/>
+                                    <outlet property="delegate" destination="h79-rx-7xC" id="foC-oX-Uhw"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FXP-aS-pxE" firstAttribute="top" secondItem="re2-aq-LH2" secondAttribute="bottom" id="O4Z-5X-Y3F"/>
+                            <constraint firstItem="re2-aq-LH2" firstAttribute="leading" secondItem="w7L-3y-zjx" secondAttribute="leading" id="Tae-I6-zse"/>
+                            <constraint firstAttribute="trailing" secondItem="re2-aq-LH2" secondAttribute="trailing" id="t6h-tp-5vb"/>
+                            <constraint firstItem="re2-aq-LH2" firstAttribute="top" secondItem="w7L-3y-zjx" secondAttribute="top" id="tUF-Jw-lsW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="NGワード設定" id="hYD-fV-InM">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="MfF-kO-eHy">
+                            <connections>
+                                <action selector="pressAddBtn:" destination="h79-rx-7xC" id="qHH-p6-paD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tbV" destination="re2-aq-LH2" id="atC-sW-cr1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2yW-3K-lIY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1003" y="757"/>
         </scene>
     </scenes>
 </document>

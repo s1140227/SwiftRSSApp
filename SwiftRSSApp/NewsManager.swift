@@ -35,6 +35,8 @@ class NewsManager:NSObject,MWFeedParserDelegate{
     
     //RSSから取得したニュースの配列
     var newsAr = [MWFeedItem]()
+    private var tmpNewsAr = [MWFeedItem]()
+    
     //ローディングカウンター
     var downloadFinishCounter = 0
     
@@ -48,13 +50,20 @@ class NewsManager:NSObject,MWFeedParserDelegate{
         return Static.instance
     }
     
+    override init() {
+        super.init()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "ngWordUpdate", name: NGWordManagerNotifi.NGWordListUpdate, object: nil)
+        
+    }
+    
     
     //全フィードを更新
     func downloadAllFeed(){
         
         ExUtil.progressShow()
         
-        newsAr = [MWFeedItem]()
+        tmpNewsAr = [MWFeedItem]()
         downloadFinishCounter = 0
         
         for(var i = 0; i < FeedManager.instance.feedAr.count; i++){
@@ -99,11 +108,15 @@ class NewsManager:NSObject,MWFeedParserDelegate{
         incDownloadCounter()
         
         //sort
-        newsAr.sort { (cat1, cat2) -> Bool in
+        tmpNewsAr.sort { (cat1, cat2) -> Bool in
             let cmp = cat1.date.compare(cat2.date)
             if cmp == NSComparisonResult.OrderedDescending {return true}
             return false
         }
+        
+        //NGワードを削除しつつ表示用配列にマッピング
+        ngWordRemove()
+        
         
         //notifi
         NSNotificationCenter.defaultCenter().postNotificationName(NewsManagerNotifi.NewsListUpdate, object: nil ,userInfo:nil)
@@ -147,10 +160,60 @@ class NewsManager:NSObject,MWFeedParserDelegate{
     //各ニュースアイテム保存
     func feedParser(parser: MWFeedParser!, didParseFeedItem item: MWFeedItem!) {
         item.source = FeedManager.instance.getTitleAtParser(parser)
-        newsAr.append(item)
+        tmpNewsAr.append(item)
         
     }
 
+    
+    
+    
+    //NGワードチェック
+    
+    func ngWordUpdate(){
+        
+        //NGワードを削除しつつ表示用配列にマッピング
+        ngWordRemove()
+        
+        //notifi
+        NSNotificationCenter.defaultCenter().postNotificationName(NewsManagerNotifi.NewsListUpdate, object: nil ,userInfo:nil)
+        
+    }
+    
+    func ngWordRemove(){
+        
+        newsAr = [MWFeedItem]()
+        
+        for news in tmpNewsAr{
+            if !isNG(news){ newsAr.append(news)}
+        }
+    }
+    
+    func isNG(news:MWFeedItem) -> Bool{
+        
+        for ng in NGWordManager.instance.ngAr{
+            
+            let range = (news.title as NSString).rangeOfString(ng.word)
+            if range.location != NSNotFound{
+                
+                //記事を削除するケース
+                if ng.type == 0{
+                    println(">>>削除対象>>>>>\(news.title)")
+                    return true
+                }
+                
+                //文字を削除するケース
+                if ng.type == 1{
+                    
+                    news.title = (news.title as NSString).stringByReplacingOccurrencesOfString(ng.word, withString: "***")
+                    
+                }
+                
+            }
+            
+        }
+        
+        return false
+    }
     
 }
 

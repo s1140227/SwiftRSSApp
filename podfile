@@ -2,3 +2,4 @@ platform :ios, '7.1'
 
 pod 'MBProgressHUD'
 pod 'MWFeedParser'
+pod 'ActionSheetPicker-3.0'

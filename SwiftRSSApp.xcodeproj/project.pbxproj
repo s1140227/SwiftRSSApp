@@ -26,6 +26,8 @@
 		23442C271A9CD95D00C7A379 /* RssNewsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23442C161A9CD95D00C7A379 /* RssNewsListVC.swift */; };
 		23442C3E1A9CDBA800C7A379 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23442C3C1A9CDBA800C7A379 /* Crashlytics.framework */; };
 		23442C3F1A9CDBA800C7A379 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23442C3D1A9CDBA800C7A379 /* Fabric.framework */; };
+		235B32581AA02BE900F035AB /* NGListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235B32571AA02BE900F035AB /* NGListVC.swift */; };
+		235B32601AA02CE100F035AB /* NGWordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235B325F1AA02CE100F035AB /* NGWordManager.swift */; };
 		23768A821A9CD84500CA50B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23768A811A9CD84500CA50B0 /* AppDelegate.swift */; };
 		23768A871A9CD84500CA50B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23768A851A9CD84500CA50B0 /* Main.storyboard */; };
 		23768A891A9CD84500CA50B0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23768A881A9CD84500CA50B0 /* Images.xcassets */; };
@@ -55,6 +57,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = 554C8CED82ABDCDAF49BECED;
 			remoteInfo = "Pods-MWFeedParser";
+		};
+		235B325D1AA02BE900F035AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 23442C411A9CE36300C7A379 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9861B64DE943ACE9B3BFE3A3;
+			remoteInfo = "Pods-ActionSheetPicker-3.0";
 		};
 		23768A921A9CD84500CA50B0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -88,6 +97,8 @@
 		23442C3C1A9CDBA800C7A379 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		23442C3D1A9CDBA800C7A379 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
 		23442C411A9CE36300C7A379 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = SOURCE_ROOT; };
+		235B32571AA02BE900F035AB /* NGListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGListVC.swift; sourceTree = "<group>"; };
+		235B325F1AA02CE100F035AB /* NGWordManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGWordManager.swift; sourceTree = "<group>"; };
 		23768A7C1A9CD84500CA50B0 /* SwiftRSSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftRSSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23768A801A9CD84500CA50B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23768A811A9CD84500CA50B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -173,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				23442C481A9CE36300C7A379 /* libPods.a */,
+				235B325E1AA02BE900F035AB /* libPods-ActionSheetPicker-3.0.a */,
 				23442C4A1A9CE36300C7A379 /* libPods-MBProgressHUD.a */,
 				23442C4C1A9CE36300C7A379 /* libPods-MWFeedParser.a */,
 			);
@@ -205,10 +217,12 @@
 				23442C031A9CD95D00C7A379 /* Lib */,
 				23768A811A9CD84500CA50B0 /* AppDelegate.swift */,
 				23442C001A9CD95D00C7A379 /* ExUtil.swift */,
+				23442C161A9CD95D00C7A379 /* RssNewsListVC.swift */,
+				23442C141A9CD95D00C7A379 /* NewsManager.swift */,
 				23442C011A9CD95D00C7A379 /* FeedListVC.swift */,
 				23442C021A9CD95D00C7A379 /* FeedManager.swift */,
-				23442C141A9CD95D00C7A379 /* NewsManager.swift */,
-				23442C161A9CD95D00C7A379 /* RssNewsListVC.swift */,
+				235B32571AA02BE900F035AB /* NGListVC.swift */,
+				235B325F1AA02CE100F035AB /* NGWordManager.swift */,
 				23768A851A9CD84500CA50B0 /* Main.storyboard */,
 				23768A881A9CD84500CA50B0 /* Images.xcassets */,
 				23768A8A1A9CD84500CA50B0 /* LaunchScreen.xib */,
@@ -367,6 +381,13 @@
 			remoteRef = 23442C4B1A9CE36300C7A379 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		235B325E1AA02BE900F035AB /* libPods-ActionSheetPicker-3.0.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libPods-ActionSheetPicker-3.0.a";
+			remoteRef = 235B325D1AA02BE900F035AB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -447,9 +468,11 @@
 				23442C1A1A9CD95D00C7A379 /* FromJSON.swift in Sources */,
 				23442C171A9CD95D00C7A379 /* ExUtil.swift in Sources */,
 				23442C251A9CD95D00C7A379 /* URLTransform.swift in Sources */,
+				235B32581AA02BE900F035AB /* NGListVC.swift in Sources */,
 				23442C1C1A9CD95D00C7A379 /* Operators.swift in Sources */,
 				23442C241A9CD95D00C7A379 /* TransformType.swift in Sources */,
 				23768A821A9CD84500CA50B0 /* AppDelegate.swift in Sources */,
+				235B32601AA02CE100F035AB /* NGWordManager.swift in Sources */,
 				23442C1D1A9CD95D00C7A379 /* ToJSON.swift in Sources */,
 				23442C261A9CD95D00C7A379 /* NewsManager.swift in Sources */,
 				23442C271A9CD95D00C7A379 /* RssNewsListVC.swift in Sources */,
@@ -584,6 +607,7 @@
 			baseConfigurationReference = D8BB3402CF60B9DE5A32FBFF /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -591,6 +615,7 @@
 					"$(PROJECT_DIR)/SwiftRSSApp/Lib",
 				);
 				INFOPLIST_FILE = SwiftRSSApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftRSSApp/SwiftRSSApp-Bridging-Header.h";
@@ -603,6 +628,7 @@
 			baseConfigurationReference = 9102EC585343D719CC5EBE24 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -610,6 +636,7 @@
 					"$(PROJECT_DIR)/SwiftRSSApp/Lib",
 				);
 				INFOPLIST_FILE = SwiftRSSApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftRSSApp/SwiftRSSApp-Bridging-Header.h";

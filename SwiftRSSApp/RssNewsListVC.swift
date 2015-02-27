@@ -76,11 +76,12 @@ class RssNewsListVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
         if item.link == nil{
             
             let url = item.title.componentsSeparatedByString(" http://")
-            if url.count >= 1{
+            if url.count > 1{
                 item.link = "http://" + url[1].componentsSeparatedByString(" ")[0]
             }
         }
         
+        println(item.link)
         
         if let url = NSURL(string: item.link){
             UIApplication.sharedApplication().openURL(url)
