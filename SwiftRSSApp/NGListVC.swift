@@ -46,7 +46,7 @@ class NGListVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIAle
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("NGWordCell") as UITableViewCell
+        let cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("NGWordCell") as! UITableViewCell
         
         let item =  NGWordManager.instance.ngAr[indexPath.row]
         cell.textLabel?.text = item.word

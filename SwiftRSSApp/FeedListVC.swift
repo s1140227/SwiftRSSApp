@@ -46,7 +46,7 @@ class FeedListVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIA
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("FeedCell") as UITableViewCell
+        let cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("FeedCell") as! UITableViewCell
         
         let item =  FeedManager.instance.feedAr[indexPath.row]
         cell.textLabel?.text = item.title

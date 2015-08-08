@@ -244,7 +244,7 @@ public final class Mapper<N: Mappable> {
 	/** 
 	* Maps an Object to a JSON string
 	*/
-	public func toJSONString(object: N, prettyPrint: Bool) -> String! {
+	public func toJSONString(object: N, prettyPrint: Bool) -> String {
 		let JSONDict = toJSON(object)
 
 		var err: NSError?
@@ -256,11 +256,11 @@ public final class Mapper<N: Mappable> {
 			}
 
 			if let JSON = JSONData {
-				return NSString(data: JSON, encoding: NSUTF8StringEncoding)
+				return "\(NSString(data: JSON, encoding: NSUTF8StringEncoding))"
 			}
 		}
 
-		return nil
+		return ""
 	}
 
 	// MARK: Private utility functions for converting strings to JSON objects

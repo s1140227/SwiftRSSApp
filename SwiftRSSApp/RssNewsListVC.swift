@@ -61,7 +61,7 @@ class RssNewsListVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("NewsCell") as UITableViewCell
+        let cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("NewsCell") as! UITableViewCell
         
         let item =  NewsManager.instance.newsAr[indexPath.row]
         cell.textLabel?.text = "\(item.title)"

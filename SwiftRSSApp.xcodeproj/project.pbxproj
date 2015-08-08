@@ -26,6 +26,7 @@
 		23442C271A9CD95D00C7A379 /* RssNewsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23442C161A9CD95D00C7A379 /* RssNewsListVC.swift */; };
 		23442C3E1A9CDBA800C7A379 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23442C3C1A9CDBA800C7A379 /* Crashlytics.framework */; };
 		23442C3F1A9CDBA800C7A379 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23442C3D1A9CDBA800C7A379 /* Fabric.framework */; };
+		23555E6C1B75A8460098C443 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 23555E6B1B75A8460098C443 /* README.md */; };
 		235B32581AA02BE900F035AB /* NGListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235B32571AA02BE900F035AB /* NGListVC.swift */; };
 		235B32601AA02CE100F035AB /* NGWordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235B325F1AA02CE100F035AB /* NGWordManager.swift */; };
 		23768A821A9CD84500CA50B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23768A811A9CD84500CA50B0 /* AppDelegate.swift */; };
@@ -97,6 +98,7 @@
 		23442C3C1A9CDBA800C7A379 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		23442C3D1A9CDBA800C7A379 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
 		23442C411A9CE36300C7A379 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = SOURCE_ROOT; };
+		23555E6B1B75A8460098C443 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		235B32571AA02BE900F035AB /* NGListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGListVC.swift; sourceTree = "<group>"; };
 		235B325F1AA02CE100F035AB /* NGWordManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGWordManager.swift; sourceTree = "<group>"; };
 		23768A7C1A9CD84500CA50B0 /* SwiftRSSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftRSSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -234,6 +236,7 @@
 		23768A7F1A9CD84500CA50B0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				23555E6B1B75A8460098C443 /* README.md */,
 				23442C411A9CE36300C7A379 /* Pods.xcodeproj */,
 				23768A801A9CD84500CA50B0 /* Info.plist */,
 				23442C2C1A9CD9AC00C7A379 /* SwiftRSSApp-Bridging-Header.h */,
@@ -471,6 +474,7 @@
 				235B32581AA02BE900F035AB /* NGListVC.swift in Sources */,
 				23442C1C1A9CD95D00C7A379 /* Operators.swift in Sources */,
 				23442C241A9CD95D00C7A379 /* TransformType.swift in Sources */,
+				23555E6C1B75A8460098C443 /* README.md in Sources */,
 				23768A821A9CD84500CA50B0 /* AppDelegate.swift in Sources */,
 				235B32601AA02CE100F035AB /* NGWordManager.swift in Sources */,
 				23442C1D1A9CD95D00C7A379 /* ToJSON.swift in Sources */,
